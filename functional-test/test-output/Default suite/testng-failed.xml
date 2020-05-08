@@ -6,6 +6,8 @@
       <class name="com.awstechguide.automation.AppTest">
         <methods>
           <include name="verifyGooglePageTittle"/>
+          <include name="testSetUp"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- com.awstechguide.automation.AppTest -->
     </classes>
