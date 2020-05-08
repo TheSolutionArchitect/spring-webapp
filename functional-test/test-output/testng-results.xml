@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="7673" started-at="2020-05-08T14:17:56 EDT" finished-at="2020-05-08T14:18:04 EDT">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="7673" started-at="2020-05-08T14:17:56 EDT" finished-at="2020-05-08T14:18:04 EDT">
+      <class name="com.awstechguide.automation.AppTest">
+        <test-method status="PASS" signature="testSetUp()[pri:0, instance:com.awstechguide.automation.AppTest@1a1d6a08]" name="testSetUp" is-config="true" duration-ms="4882" started-at="2020-05-08T14:17:56 EDT" finished-at="2020-05-08T14:18:01 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSetUp -->
+        <test-method status="PASS" signature="verifyGooglePageTittle()[pri:0, instance:com.awstechguide.automation.AppTest@1a1d6a08]" name="verifyGooglePageTittle" duration-ms="1222" started-at="2020-05-08T14:18:01 EDT" finished-at="2020-05-08T14:18:02 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyGooglePageTittle -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.awstechguide.automation.AppTest@1a1d6a08]" name="tearDown" is-config="true" duration-ms="1519" started-at="2020-05-08T14:18:02 EDT" finished-at="2020-05-08T14:18:04 EDT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.awstechguide.automation.AppTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
