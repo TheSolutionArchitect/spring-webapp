@@ -17,7 +17,7 @@ public class AppTest
      * Rigorous Test :-)
      */
 	private WebDriver driver;
-	String URL = "http://google.com";
+	String URL = "https://www.amazon.ca";
 	
 	@BeforeClass
 	public void testSetUp() {	
@@ -30,10 +30,10 @@ public class AppTest
 	public void verifyGooglePageTittle() {
 		driver.navigate().to(URL);
 		String getTitle = driver.getTitle();
-		Assert.assertEquals(getTitle, "Google");
+		//Assert.assertEquals(getTitle, "Amazon");
 		System.out.println("getTitle*********"+getTitle);
-		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("Som Speaks");;
-		driver.findElement(By.xpath("//input[@value='Google Search']")).click();;
+		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("surface pro 7");
+		driver.findElement(By.xpath("//input[@type='submit']")).click();
 	}
 	
 	@AfterClass
