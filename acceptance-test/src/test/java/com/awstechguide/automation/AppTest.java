@@ -19,24 +19,30 @@ public class AppTest
 {
 
 	public HtmlUnitDriver driver;
-	public String URL = "http://google.com";
-	public String URL2 = "http://awstechguide.com";
+	public String HOME_URL = "http://localhost:8080/home";
+	public String PRODUCTS_URL = "http://localhost:8080/products";
 	
 	@Test
 	public void test1() {
 		   driver = new HtmlUnitDriver();
-		   driver.navigate().to(URL2);
-		   List<WebElement> el= driver.findElements(By.xpath("//*[text()[contains(.,'AWS Tech')]]"));
-		   System.out.println("No of existance: "+el.size());
-		   driver.findElements(By.partialLinkText("Tech"));
+		   driver.navigate().to(HOME_URL);
+		   List<WebElement> el= driver.findElements(By.xpath("//*[text()[contains(.,'Working')]]"));
+		   System.out.println("No of times available: "+el.size());
+		   driver.findElements(By.partialLinkText("It's"));
 	   }
 	
 	@Test
 	public void test2() {
 		   driver = new HtmlUnitDriver();
-		   driver.navigate().to(URL2);
-		   List<WebElement> el= driver.findElements(By.xpath("//*[text()[contains(.,'AWS Tech')]]"));
-		   System.out.println("No of existance: "+el.size());
+		   driver.navigate().to(PRODUCTS_URL);
+		   List<WebElement> el= driver.findElements(By.xpath("//*[text()[contains(.,'Rating')]]"));
+		   System.out.println("No of times available: "+el.size());
 		   driver.findElements(By.partialLinkText("Tech"));
+	   }
+	@Test
+	public void test3() {
+		   driver = new HtmlUnitDriver();
+		   driver.navigate().to(PRODUCTS_URL);
+		   driver.findElements(By.partialLinkText("Click"));
 	   }
 }
