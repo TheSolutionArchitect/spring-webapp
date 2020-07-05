@@ -31,7 +31,7 @@ public class AppTest
 		driver.navigate().to(URL);
 		String getTitle = driver.getTitle();
 		//Assert.assertEquals(getTitle, "Amazon");
-		System.out.println("getTitle*********"+getTitle);
+		System.out.println("getTitle******"+getTitle);
 		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("surface pro 7");
 		driver.findElement(By.xpath("//input[@type='submit']")).click();
 	}
