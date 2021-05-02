@@ -14,6 +14,7 @@ pipeline {
         
         stage('SCA') {
             steps {
+                echo 'Initiating  Source Composition Analysis by OWASP' 
                 sh 'rm owasp* || true'
                 sh 'wget "https://raw.githubusercontent.com/awstechguide/spring-webapp/master/owasp-dependency-checker.sh"'
                 sh 'chmod +x owasp-dependency-checker.sh'
