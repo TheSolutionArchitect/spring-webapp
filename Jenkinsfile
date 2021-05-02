@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Welcome') { 
             steps { 
-               echo 'This is a minimal pipeline.' 
+               echo 'This is a DevSecOps pipeline created by AWSTechGuide' 
             }
         }
         stage('Pull Sources') {
