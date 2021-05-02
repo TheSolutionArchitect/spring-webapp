@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    tools {
+        maven 'Maven 3.3.9'
+        jdk 'jdk8'
+    }
     stages {
         stage('Welcome') { 
             steps { 
@@ -9,6 +13,13 @@ pipeline {
         stage('Pull Sources') {
             steps {
              git url: 'https://github.com/awstechguide/spring-webapp.git'
+            }
+         }
+        
+        stage('Check-Git-Secrets') {
+            steps {
+             sh 'docker pull gesellix/trufflehog'
+			 sh 'docker run -t gesellix/trufflehog --json https://github.com/awstechguide/spring-webapp.git'
             }
          }
         
