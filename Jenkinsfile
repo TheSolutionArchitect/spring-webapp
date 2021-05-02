@@ -36,5 +36,24 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
+	    
+/* 	stage ('Deploy') {
+            steps {
+           sshagent(['tomcat']) {
+                sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@<prod-instance-IPv4>:/prod/apache-tomcat-8.5.39/webapps/spring-webapp.war'
+              }      
+           }       
+    }
+    
+    
+    stage ('DAST') {
+      steps {
+        sshagent(['zap']) {
+         sh 'ssh -o  StrictHostKeyChecking=no ubuntu@<zap-instance-IPv4> "docker run -t owasp/zap2docker-stable zap-baseline.py -t http://<prod-instance-IPv4>:<port>/spring-webapp/" || true'
+        }
+      }
+    }    
+*/	    
+	    
     }
 }
