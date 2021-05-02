@@ -24,4 +24,8 @@ docker run --rm \
     --volume $(pwd):/src:z \
     --volume "$DATA_DIRECTORY":/usr/share/dependency-check/data:z \
     --volume $(pwd)/odc-reports:/report:z \
-    owasp/dependency-check:latest --scan /src --format "ALL" --project "$DC_PROJECT" --out /report
+    owasp/dependency-check:$DC_VERSION \
+    --scan /src \
+    --format "ALL" \
+    --project "$DC_PROJECT" \
+    --out /report
