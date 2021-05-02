@@ -12,7 +12,15 @@ pipeline {
             }
          }
         
-        stage('build') {
+        stage('SCA') {
+            steps {
+                sh 'owasp* || true'
+                sh 'wget "https://raw.githubusercontent.com/awstechguide/spring-webapp/master/owasp-dependency-checker.sh"'
+                sh 'chmod +x owasp-dependency-checker.sh'
+                sh 'bash owasp-dependency-checker.sh'
+            }
+        }
+        stage('Build') {
             steps {
                 sh 'mvn clean install'
             }
