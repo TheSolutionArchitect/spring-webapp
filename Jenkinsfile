@@ -18,6 +18,7 @@ pipeline {
                 sh 'wget "https://raw.githubusercontent.com/awstechguide/spring-webapp/master/owasp-dependency-checker.sh"'
                 sh 'chmod +x owasp-dependency-checker.sh'
                 sh 'bash owasp-dependency-checker.sh'
+                sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
             }
         }
         stage('Build') {
