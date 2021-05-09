@@ -37,15 +37,15 @@ pipeline {
             }
         }
 	    
-/* 	stage ('Deploy') {
+	stage ('Deploy') {
             steps {
            sshagent(['tomcat']) {
-                sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@<prod-instance-IPv4>:/prod/apache-tomcat-8.5.39/webapps/spring-webapp.war'
+                sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@54.92.220.219:/usr/local/tomcat/webapps/webapptest.war'
               }      
            }       
     }
     
-    
+/*    
     stage ('DAST') {
       steps {
         sshagent(['zap']) {
