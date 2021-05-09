@@ -50,7 +50,7 @@ pipeline {
 	stage ('Deploy') {
           steps {
 	sshagent(['deployuser']) {
-	    sh "scp target/webapptest.war ubuntu@54.92.220.219:/usr/local/tomcat/webapps/webapptest.war"
+	    sh "scp -o StrictHostKeyChecking=no target/webapptest.war ubuntu@54.92.220.219:/usr/local/tomcat/webapps/webapptest.war"
 	    }
 	  }
 	}
