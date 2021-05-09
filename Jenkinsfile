@@ -38,14 +38,7 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-	    
-/*	stage ('Deploy_bkup') {
-            steps {
-           sshagent(['tomcat']) {
-                sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@54.92.220.219:/usr/local/tomcat/webapps/webapptest.war'
-              }      
-           }       
-    } */
+
 	    
 	stage ('Deploy') {
           steps {
@@ -59,7 +52,7 @@ pipeline {
     stage ('DAST') {
       steps {
         sshagent(['zap']) {
-         sh 'ssh -o  StrictHostKeyChecking=no ubuntu@<zap-instance-IPv4> "docker run -t owasp/zap2docker-stable zap-baseline.py -t http://<prod-instance-IPv4>:<port>/spring-webapp/" || true'
+         sh 'ssh -o  StrictHostKeyChecking=no ubuntu@<zap-instance-IPv4> "docker run -t owasp/zap2docker-stable zap-baseline.py -t http://54.92.220.219:8080/webapptest/home" || true'
         }
       }
     }    
