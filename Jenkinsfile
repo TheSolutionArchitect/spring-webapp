@@ -39,13 +39,21 @@ pipeline {
             }
         }
 	    
-	stage ('Deploy') {
+/*	stage ('Deploy_bkup') {
             steps {
            sshagent(['tomcat']) {
                 sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@54.92.220.219:/usr/local/tomcat/webapps/webapptest.war'
               }      
            }       
-    }
+    } */
+	    
+	stage ('Deploy') {
+          steps {
+	sshagent(['deployuser']) {
+	    sh "scp target/webapptest.war ubuntu@54.92.220.219:/usr/local/tomcat/webapps/webapptest.war"
+	    }
+	  }
+	}
     
 /*    
     stage ('DAST') {
