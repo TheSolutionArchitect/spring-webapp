@@ -21,6 +21,7 @@ pipeline {
             }
          }
         
+/*	    
         stage('SCA') {
             steps {
                 echo 'Initiating  Source Composition Analysis by OWASP' 
@@ -31,6 +32,7 @@ pipeline {
                 sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
             }
         }
+	    */
         stage('Build') {
             steps {
                 sh 'mvn clean install'
